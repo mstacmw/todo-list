@@ -64,6 +64,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(_tasks[index]),
+                    trailing: IconButton( 
+                      icon: Icon(Icons.delete),
+                      color: Colors.black,
+                      onPressed: () {
+                        setState(() {
+                          _tasks.removeAt(index);
+                        });
+                      }
+                    )
                   );
                 },
               ),
